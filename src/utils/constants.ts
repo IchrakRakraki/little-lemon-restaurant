@@ -19,6 +19,7 @@ export const emailErrorMsg: { required: string; invalid: string } = {
   invalid: "Invalid email address",
 };
 
+// Top bar navigation links
 type NavigationLink = { link: string; label: string };
 export const navigationLinks: NavigationLink[] = [
   { link: "/#", label: "Home" },

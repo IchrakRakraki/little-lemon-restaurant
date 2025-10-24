@@ -19,6 +19,9 @@ const StickyPos = styled.div`
 `;
 
 function App() {
+  console.log(
+    "© Ichrak – This project is original work submitted for the Meta Front-End Developer Capstone.",
+  );
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>

@@ -25,11 +25,9 @@ export const GlobalStyles = createGlobalStyle`
 
   section:not(.hero){
     padding: 5rem 0 6rem;
-
     ${media.md`
     scroll-margin-top: 80px;
     `}
-    
   }
 
   #bookingRsvDetails, #bookingContactDetails {
@@ -64,8 +62,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   p {
-    max-width: 35ch;
     margin: ${({ theme }) => theme.spacing.lg} 0;
+  }
+  main p {
+    max-width: 35ch;
+
   }
   a {
     text-decoration: none;

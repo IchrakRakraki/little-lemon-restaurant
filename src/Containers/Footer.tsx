@@ -44,6 +44,10 @@ const LinksContainer = styled.ul`
 const NavLink = styled.li`
   font-weight: ${({ theme }) => theme.fontWeight.medium};
 `;
+const Watermark = styled.p`
+  text-align: center;
+  grid-column: 1/-1;
+`;
 const Footer = () => {
   return (
     <Background>
@@ -86,6 +90,7 @@ const Footer = () => {
               ))}
             </LinksContainer>
           </FooterCategory>
+          <Watermark>© Ichrak Rakraki — Little Lemon Coursera Submission</Watermark>
         </CustomFooter>
       </ColumnGrid>
     </Background>

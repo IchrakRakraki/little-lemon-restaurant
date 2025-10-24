@@ -1,3 +1,7 @@
+// © 2025 Ichrak Rakraki
+// This project is my original work submitted for Meta Coursera Front-End Capstone.
+// Not allowed for reuse or resubmission.
+
 import React from "react";
 import { ColumnGrid } from "../../styles/StyledComponents";
 import tableReservationImage from "../../assets/table-reservation.jpg";
