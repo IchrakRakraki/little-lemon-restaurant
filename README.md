@@ -28,6 +28,7 @@ Then open the URL shown in your terminal (usually http://localhost:5173)
 
 ### 📂 Project Structure
 
+```tree
 little-lemon/
 ├── public/
 ├── src/
@@ -41,7 +42,7 @@ little-lemon/
 ├── package.json
 ├── vite.config.js / vite.config.ts
 └── README.md
-
+```
 ### ⚖️ License & Usage
 
 This project is my original work.
