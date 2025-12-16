@@ -1,5 +1,5 @@
 import Main from "./Containers/Main";
-import Nav from "./Containers/Nav";
+import Header from "./Containers/Header";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./styles/Theme";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -27,7 +27,7 @@ function App() {
       <BrowserRouter>
         <GlobalStyles />
         <StickyPos>
-          <Nav />
+          <Header />
         </StickyPos>
         <Main />
         <Footer />

@@ -19,6 +19,8 @@ const TextContent = styled.div`
     `}
 `;
 
+// TODO: keep one h1 in a page and sections should have h2
+
 const Title = styled.h1`
   color: ${({ theme }) => theme.color.primary.dark};
 `;

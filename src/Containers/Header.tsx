@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { navigationLinks } from "../utils/constants";
 
-const StyledNav = styled.nav`
+const StyledNav = styled.header`
   grid-column: 1/-1;
   display: flex;
   width: 100%;
@@ -157,7 +157,7 @@ const Logo = () => (
     <img src={logoImg} alt="Little Lemon restautant logo." />
   </LogoLink>
 );
-const Nav = () => {
+const Header = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState<boolean>(false);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const handleCloseMenu = () => {
@@ -194,15 +194,17 @@ const Nav = () => {
                 onClick={handleCloseMenu}
               />
             </MobileMenuHeader>
-            <MobileNavLinks>
-              {navigationLinks.map(linkObj => (
-                <NavLink key={linkObj.label}>
-                  <CustomLink href={linkObj.link} onClick={handleCloseMenu}>
-                    {linkObj.label}
-                  </CustomLink>
-                </NavLink>
-              ))}
-            </MobileNavLinks>
+            <nav>
+              <MobileNavLinks>
+                {navigationLinks.map(linkObj => (
+                  <NavLink key={linkObj.label}>
+                    <CustomLink href={linkObj.link} onClick={handleCloseMenu}>
+                      {linkObj.label}
+                    </CustomLink>
+                  </NavLink>
+                ))}
+              </MobileNavLinks>
+            </nav>
           </MobileMenu>
         )}
         <Logo />
@@ -213,15 +215,17 @@ const Nav = () => {
           role="button"
           aria-label="Open basket"
         />
-        <NavLinks>
-          {navigationLinks.map(linkObj => (
-            <NavLink key={linkObj.label}>
-              <CustomLink href={linkObj.link}>{linkObj.label}</CustomLink>
-            </NavLink>
-          ))}
-        </NavLinks>
+        <nav>
+          <NavLinks>
+            {navigationLinks.map(linkObj => (
+              <NavLink key={linkObj.label}>
+                <CustomLink href={linkObj.link}>{linkObj.label}</CustomLink>
+              </NavLink>
+            ))}
+          </NavLinks>
+        </nav>
       </StyledNav>
     </ColumnGrid>
   );
 };
-export default Nav;
+export default Header;

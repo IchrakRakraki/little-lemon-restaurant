@@ -4,6 +4,7 @@ import { weekSpecials } from "../../dummyData";
 import { ColumnGrid } from "../../styles/StyledComponents";
 import CTAButton from "../../Components/CTAButton";
 import { media } from "../../styles/Theme";
+import { useNavigate } from "react-router-dom";
 
 const Content = styled.div`
   margin-top: 2rem;
@@ -42,21 +43,24 @@ const SectionHeader = styled.div`
   `};
 `;
 
-const Specials = () => (
-  <section id="specials">
-    <ColumnGrid>
-      <Content>
-        <SectionHeader>
-          <h1>This week's specials!</h1>
-          <CTAButton buttonText="Online Menu" onClick={() => console.log("Menu")} />
-        </SectionHeader>
+const Specials = () => {
+  const navigate = useNavigate();
+  return (
+    <section id="specials">
+      <ColumnGrid>
+        <Content>
+          <SectionHeader>
+            <h1>This week's specials!</h1>
+            <CTAButton buttonText="Online Menu" onClick={() => navigate("/menu")} />
+          </SectionHeader>
 
-        {weekSpecials.map(item => (
-          <Card key={item.id} {...item} />
-        ))}
-      </Content>
-    </ColumnGrid>
-  </section>
-);
+          {weekSpecials.map(item => (
+            <Card key={item.id} {...item} />
+          ))}
+        </Content>
+      </ColumnGrid>
+    </section>
+  );
+};
 
 export default Specials;

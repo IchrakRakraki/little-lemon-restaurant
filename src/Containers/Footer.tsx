@@ -3,7 +3,7 @@ import LargeLogo from "../assets/LargeLogo.png";
 import { media } from "../styles/Theme";
 import { ColumnGrid } from "../styles/StyledComponents";
 import { footerNavigationLinks } from "../utils/constants";
-import { CustomLink } from "./Nav";
+import { CustomLink } from "./Header";
 const Background = styled.div`
   background-color: ${({ theme }) => theme.color.highlight.light};
 `;
