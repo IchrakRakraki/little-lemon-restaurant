@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Container, Subtitle, type Contact, type ErrorType, type Touched } from "./BookingPage";
 import { media } from "../../styles/Theme";

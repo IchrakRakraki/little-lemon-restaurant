@@ -2,4 +2,5 @@
   "files": [],
   "include": ["src", "styled.d.ts", "tests", "src/utils/api.ts"],
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "exclude": ["src/**/*.test.tsx", "src/**/*.test.ts"]
 }
