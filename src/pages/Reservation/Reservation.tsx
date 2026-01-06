@@ -17,16 +17,16 @@ import { useFormValidation } from "../../hooks/useFormValidation";
 import { submitAPI } from "../../utils/api";
 import { occasionOptions } from "../../utils/dummyData";
 
-const Thumbnail = styled.img`
+export const Thumbnail = styled.img`
   width: 100%;
-  height: 250px;
+  height: 150px;
 `;
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xl};
-  padding: ${({ theme }) => theme.spacing.lg} 0 5rem;
+  padding: 0 0 5rem;
   ${media.sm`
     grid-column: 1/-1;
   `}
@@ -166,7 +166,7 @@ const Reservation = () => {
     <>
       <Thumbnail src={tableReservationImage} alt="Decorative restaurant table" />
       <ColumnGrid>
-        <Title>Reserve a Table</Title>
+        <Title>Reserve your table</Title>
         <StyledForm>
           <ReservationSection
             reservation={reservation}

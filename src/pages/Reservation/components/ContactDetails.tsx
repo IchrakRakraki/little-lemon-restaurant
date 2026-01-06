@@ -59,7 +59,7 @@ const ContactSection: FC<ContactSectionProps> = ({
   };
   return (
     <section id="bookingContactDetails" aria-labelledby="contact-info">
-      <Subtitle>Contact Information</Subtitle>
+      <Subtitle>Step 2/2 - Contact Information</Subtitle>
       <ContactDetails>
         <Container>
           <Container $spacingValue="xs">

@@ -74,6 +74,78 @@ export const testimonials = [
   },
 ];
 
+// Menu Data
+export const menuData = [
+  {
+    id: 1,
+    name: "Appetizers",
+    entries: [
+      {
+        name: "Caprese Salad",
+        price: "$7",
+        description: "Tomatoes, mozzarella, fresh basil, balsamic glaze.",
+      },
+      {
+        name: "Stuffed Mushrooms",
+        price: "$8",
+        description: "Mushrooms filled with cheese and herbs.",
+      },
+      { name: "Garlic Bread", price: "$5", description: "Crispy bread with garlic butter." },
+    ],
+  },
+  {
+    id: 2,
+    name: "Main Courses",
+    entries: [
+      {
+        name: "Grilled Salmon",
+        price: "$18",
+        description: "Fresh salmon with lemon butter sauce.",
+      },
+      {
+        name: "Pasta Primavera",
+        price: "$15",
+        description: "Seasonal vegetables with penne pasta.",
+      },
+      {
+        name: "Chicken Marsala",
+        price: "$17",
+        description: "Sautéed chicken with mushrooms and Marsala wine.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Desserts",
+    entries: [
+      {
+        name: "Tiramisu",
+        price: "$7",
+        description: "Classic Italian dessert with coffee and mascarpone.",
+      },
+      {
+        name: "Chocolate Lava Cake",
+        price: "$8",
+        description: "Warm chocolate cake with molten center.",
+      },
+      {
+        name: "Panna Cotta",
+        price: "$6",
+        description: "Creamy vanilla dessert with berry coulis.",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Beverages",
+    entries: [
+      { name: "Lemonade", price: "$3", description: "Freshly squeezed lemons." },
+      { name: "Red Wine", price: "$6", description: "House-selected wine." },
+      { name: "Iced Tea", price: "$3", description: "Refreshing black iced tea with lemon." },
+    ],
+  },
+];
+
 export const occasionOptions: string[] = [
   "Birthday",
   "Anniversary",

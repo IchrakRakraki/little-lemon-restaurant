@@ -82,6 +82,8 @@ const CustomCalendar = styled(Calendar)`
     background-color: ${({ theme }) => theme.color.primary.light};
     &:focus,
     :focus-visible {
+      outline: 2px solid ${({ theme }) => theme.color.primary.dark};
+
       background-color: ${({ theme }) => theme.color.primary.light};
       abbr {
         color: ${({ theme }) => theme.color.primary.dark};
@@ -268,7 +270,7 @@ const ReservationSection: FC<ReservationSectionProps> = ({
 
   return (
     <section id="bookingRsvDetails" aria-labelledby="reservation-details">
-      <Subtitle id="reservation-details">Reservation details</Subtitle>
+      <Subtitle id="reservation-details">Step 1/2 - Reservation details</Subtitle>
       <ReservationDetails>
         <Container aria-labelledby="res-date">
           <RequiredLabel id="res-date">Select date</RequiredLabel>

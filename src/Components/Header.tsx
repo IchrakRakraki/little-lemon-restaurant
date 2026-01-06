@@ -26,10 +26,10 @@ const StyledNav = styled.header`
     padding: 1rem 0;
   `};
   ${media.lg`
-    grid-column: 2/-2;
+    grid-column: 1/-1;
   `}
   ${media.xl`
-    grid-column: 3/-3;
+    grid-column: 2/-2;
   `}
 `;
 
@@ -46,6 +46,14 @@ const MobileIcon = styled.img<{ $isLeftIcon?: boolean }>`
     outline: 4px solid ${({ theme }) => theme.color.primary.light};
     outline-offset: ${({ theme }) => theme.spacing.sm};
   }
+  ${media.md`
+        display: none;
+    `};
+`;
+
+const PlaceholderIcon = styled.div`
+  width: 32px;
+  height: 100%;
   ${media.md`
         display: none;
     `};
@@ -110,8 +118,7 @@ const NavLinks = styled.ul`
   display: none;
   ${media.md`
         display: flex;
-        justify-content: space-between;
-        justify-self: flex-end;
+        justify-content: flex-end;
         align-items: center;
     `}
 `;
@@ -160,6 +167,7 @@ const Logo = () => (
 const Header = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState<boolean>(false);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+  const hasOrder = false;
   const handleCloseMenu = () => {
     setIsTransitioning(true);
     const t = setTimeout(() => {
@@ -208,13 +216,17 @@ const Header = () => {
           </MobileMenu>
         )}
         <Logo />
-        <MobileIcon
-          src={basketIcon}
-          alt="Basket icon."
-          tabIndex={0}
-          role="button"
-          aria-label="Open basket"
-        />
+        {hasOrder ? (
+          <MobileIcon
+            src={basketIcon}
+            alt="Basket icon."
+            tabIndex={0}
+            role="button"
+            aria-label="Open basket"
+          />
+        ) : (
+          <PlaceholderIcon />
+        )}
         <nav>
           <NavLinks>
             {navigationLinks.map(linkObj => (

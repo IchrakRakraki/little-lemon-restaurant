@@ -26,7 +26,7 @@ const Price = styled.span`
 const CardContent = styled.div`
   padding: ${({ theme }) => theme.spacing.md};
   display: grid;
-  grid-template-rows: 1.5rem 8rem 1fr;
+  grid-template-rows: 1.5rem auto 1fr;
   ${media.md`
   grid-template-rows: 1.5rem 10rem 1fr;
   `}
@@ -38,10 +38,14 @@ const DeliveryButton = styled.button`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   text-align: start;
   padding: 0.5rem 0;
+  color: ${({ theme }) => theme.color.highlight.dark};
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.color.primary.dark};
+  }
 `;
 
 const Icon = styled.img`
-  color: ${({ theme }) => theme.color.highlight.dark};
   margin-left: ${({ theme }) => theme.spacing.sm};
 `;
 
