@@ -83,7 +83,6 @@ const CustomCalendar = styled(Calendar)`
     &:focus,
     :focus-visible {
       outline: 2px solid ${({ theme }) => theme.color.primary.dark};
-
       background-color: ${({ theme }) => theme.color.primary.light};
       abbr {
         color: ${({ theme }) => theme.color.primary.dark};
@@ -234,7 +233,6 @@ const ReservationSection: FC<ReservationSectionProps> = ({
     if (Array.isArray(value)) return;
     setReservation(prev => ({ ...prev, date: value }));
     dispatchTimes({ type: "UPDATE_TIMES", date: value });
-    console.log(timeInputRef.current);
     timeInputRef.current?.focus();
   };
   useEffect(() => {
