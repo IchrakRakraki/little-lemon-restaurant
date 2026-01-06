@@ -3,16 +3,18 @@
 // Not allowed for reuse or resubmission.
 
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage/HomePage";
-import BookingPage from "./BookingPage/BookingPage";
-import ConfirmationPage from "./BookingPage/ConfirmationPage";
+import HomePage from "../pages/Home/Home";
+import Reservation from "../pages/Reservation/Reservation";
+import ConfirmationPage from "../pages/Reservation/components/ConfirmationPage";
+import Menu from "../pages/Menu/Menu";
 
 const Main = () => {
   return (
     <main>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/booking" element={<BookingPage />}></Route>
+        <Route path="/booking" element={<Reservation />}></Route>
+        <Route path="/menu" element={<Menu />}></Route>
         <Route path="/confirmation" element={<ConfirmationPage />}></Route>
       </Routes>
     </main>

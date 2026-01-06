@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import heroImage from "../../assets/restauranfood.jpg";
-import { media } from "../../styles/Theme";
-import CTAButton from "../../Components/CTAButton";
-import { ColumnGrid } from "../../styles/StyledComponents";
+import heroImage from "../../../assets/images/hero.jpg";
+import { media } from "../../../styles/Theme";
+import CTAButton from "../../../components/CTAButton";
+import { ColumnGrid } from "../../../styles/StyledComponents";
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = styled.section`

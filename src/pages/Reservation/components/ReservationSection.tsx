@@ -9,16 +9,16 @@ import {
   type Reservation,
   type TimesAction,
   type Touched,
-} from "./BookingPage";
+} from "../Reservation";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { media } from "../../styles/Theme";
+import { media } from "../../../styles/Theme";
 import { useEffect, useRef, type Dispatch, type FC, type SetStateAction } from "react";
-import { minMaxDiners } from "../../utils/constants";
-import { ErrorMessage } from "../../styles/StyledComponents";
-import { occasionOptions } from "../../dummyData";
+import { minMaxDiners } from "../../../utils/constants";
+import { ErrorMessage } from "../../../styles/StyledComponents";
+import { occasionOptions } from "../../../utils/dummyData";
 
 const ReservationDetails = styled.div`
   ${({ theme }) => media.md`
@@ -82,6 +82,7 @@ const CustomCalendar = styled(Calendar)`
     background-color: ${({ theme }) => theme.color.primary.light};
     &:focus,
     :focus-visible {
+      outline: 2px solid ${({ theme }) => theme.color.primary.dark};
       background-color: ${({ theme }) => theme.color.primary.light};
       abbr {
         color: ${({ theme }) => theme.color.primary.dark};
@@ -232,7 +233,6 @@ const ReservationSection: FC<ReservationSectionProps> = ({
     if (Array.isArray(value)) return;
     setReservation(prev => ({ ...prev, date: value }));
     dispatchTimes({ type: "UPDATE_TIMES", date: value });
-    console.log(timeInputRef.current);
     timeInputRef.current?.focus();
   };
   useEffect(() => {
@@ -268,7 +268,7 @@ const ReservationSection: FC<ReservationSectionProps> = ({
 
   return (
     <section id="bookingRsvDetails" aria-labelledby="reservation-details">
-      <Subtitle id="reservation-details">Reservation details</Subtitle>
+      <Subtitle id="reservation-details">Step 1/2 - Reservation details</Subtitle>
       <ReservationDetails>
         <Container aria-labelledby="res-date">
           <RequiredLabel id="res-date">Select date</RequiredLabel>

@@ -23,10 +23,10 @@ export const emailErrorMsg: { required: string; invalid: string } = {
 type NavigationLink = { link: string; label: string };
 export const navigationLinks: NavigationLink[] = [
   { link: "/#", label: "Home" },
-  { link: "/#specials", label: "Menu" },
   { link: "/#about", label: "About" },
-  { link: "/booking", label: "Reservations" },
-  { link: "/#order", label: "Order Online" },
+  { link: "/menu", label: "Menu" },
+  { link: "/booking", label: "Reserve Table" },
+  // { link: "/#order", label: "Order Online" },
   // { link: "/login", label: "Login" },
 ];
 
@@ -37,9 +37,14 @@ export const footerNavigationLinks: {
 } = {
   doormat: navigationLinks,
   contact: [
-    { link: "", label: "Address" },
-    { link: "", label: "Phone Number" },
-    { link: "", label: "Email" },
+    {
+      link: "https://www.google.com/maps",
+      label: `Little Lemon Co. /n
+      97, Lincoln Street /n
+      Chicago, Illinois 60602`,
+    },
+    { link: "tel: +5551234567", label: "(555) 123-4567" },
+    { link: "mailto: info@littlelemon.com", label: "info@littlelemon.com" },
   ],
   social: [
     { link: "", label: "Tiktok" },

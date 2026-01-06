@@ -1,12 +1,12 @@
-import Main from "./Containers/Main";
-import Nav from "./Containers/Nav";
+import Main from "./components/Main";
+import Header from "./components/Header";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./styles/Theme";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 import { GlobalStyles } from "./styles/GlobalStyles";
-import Footer from "./Containers/Footer";
+import Footer from "./components/Footer";
 import { BrowserRouter } from "react-router-dom";
 
 library.add(faStarSolid, faStarRegular);
@@ -27,7 +27,7 @@ function App() {
       <BrowserRouter>
         <GlobalStyles />
         <StickyPos>
-          <Nav />
+          <Header />
         </StickyPos>
         <Main />
         <Footer />

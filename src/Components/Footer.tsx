@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import LargeLogo from "../assets/LargeLogo.png";
+import LargeLogo from "../assets/logos/logo_lg.png";
 import { media } from "../styles/Theme";
 import { ColumnGrid } from "../styles/StyledComponents";
 import { footerNavigationLinks } from "../utils/constants";
-import { CustomLink } from "./Nav";
+import { CustomLink } from "./Header";
 const Background = styled.div`
   background-color: ${({ theme }) => theme.color.highlight.light};
 `;
@@ -19,10 +19,10 @@ const CustomFooter = styled.footer`
         grid-template-columns: repeat(4, minmax(0, 1fr));
     `}
     ${media.lg`
-    grid-column: 2/-2;
+    grid-column: 1/-1;
   `}
   ${media.xl`
-    grid-column: 3/-3;
+    grid-column: 2/-2;
   `}
 `;
 
@@ -44,10 +44,7 @@ const LinksContainer = styled.ul`
 const NavLink = styled.li`
   font-weight: ${({ theme }) => theme.fontWeight.medium};
 `;
-const Watermark = styled.p`
-  text-align: center;
-  grid-column: 1/-1;
-`;
+
 const Footer = () => {
   return (
     <Background>
@@ -55,7 +52,7 @@ const Footer = () => {
         <CustomFooter>
           <img src={LargeLogo} alt="Little Lemon restaurant logo" />
           <FooterCategory>
-            <Title>Doormat Navigation</Title>
+            <Title>Navigation</Title>
             <LinksContainer>
               {footerNavigationLinks.doormat.map(linkObj => (
                 <NavLink key={linkObj.label}>
@@ -72,14 +69,19 @@ const Footer = () => {
               {footerNavigationLinks.contact.map(linkObj => (
                 <NavLink key={linkObj.label}>
                   <CustomLink href={linkObj.link} $smallPadding>
-                    {linkObj.label}
+                    {linkObj.label.split("/n").map((item, index) => (
+                      <span key={index}>
+                        {item}
+                        <br />
+                      </span>
+                    ))}
                   </CustomLink>
                 </NavLink>
               ))}
             </LinksContainer>
           </FooterCategory>
           <FooterCategory>
-            <Title>Social Media Links</Title>
+            <Title>Social Media</Title>
             <LinksContainer>
               {footerNavigationLinks.social.map(linkObj => (
                 <NavLink key={linkObj.label}>
@@ -90,7 +92,7 @@ const Footer = () => {
               ))}
             </LinksContainer>
           </FooterCategory>
-          <Watermark>© Ichrak Rakraki — Little Lemon Coursera Submission</Watermark>
+          {/* <Watermark>© Ichrak Rakraki — Little Lemon Coursera Submission</Watermark> */}
         </CustomFooter>
       </ColumnGrid>
     </Background>

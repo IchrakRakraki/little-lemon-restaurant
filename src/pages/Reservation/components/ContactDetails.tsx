@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Container, Subtitle, type Contact, type ErrorType, type Touched } from "./BookingPage";
-import { media } from "../../styles/Theme";
+import { Container, Subtitle, type Contact, type ErrorType, type Touched } from "../Reservation";
+import { media } from "../../../styles/Theme";
 import type { ChangeEvent, FocusEvent, Dispatch, FC, SetStateAction } from "react";
-import { ErrorMessage } from "../../styles/StyledComponents";
+import { ErrorMessage } from "../../../styles/StyledComponents";
 import { RequiredLabel } from "./ReservationSection";
 
 const ContactDetails = styled.div`
@@ -50,15 +50,15 @@ const ContactSection: FC<ContactSectionProps> = ({
   const { firstName, lastName, email } = contact;
   const handleTextField = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setContact(prev => ({ ...prev, [name]: value }));
+    setContact((prev: Contact) => ({ ...prev, [name]: value }));
   };
   const handleOnBlur = (event: FocusEvent<HTMLInputElement>) => {
     const { name } = event.target as { name: keyof Touched };
-    setTouched(prev => (!prev[name] ? { ...prev, [name]: true } : prev));
+    setTouched((prev: Touched) => (!prev[name] ? { ...prev, [name]: true } : prev));
   };
   return (
     <section id="bookingContactDetails" aria-labelledby="contact-info">
-      <Subtitle>Contact Information</Subtitle>
+      <Subtitle>Step 2/2 - Contact Information</Subtitle>
       <ContactDetails>
         <Container>
           <Container $spacingValue="xs">

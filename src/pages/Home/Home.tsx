@@ -2,10 +2,10 @@
 // This project is my original work submitted for Meta Coursera Front-End Capstone.
 // Not allowed for reuse or resubmission.
 
-import About from "./About";
-import Hero from "./Hero";
-import Specials from "./Specials";
-import Testimonials from "./Testimonials";
+import About from "./components/About";
+import Hero from "./components/Hero";
+import Specials from "./components/Specials/Specials";
+import Testimonials from "./components/Testimonials/Testimonials";
 
 const Homepage = () => {
   return (

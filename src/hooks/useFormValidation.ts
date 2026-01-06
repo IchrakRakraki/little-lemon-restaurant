@@ -4,7 +4,7 @@ import type {
   Reservation,
   ErrorType,
   Touched,
-} from "../Containers/BookingPage/BookingPage";
+} from "../pages/Reservation/components/Reservation";
 import {
   dinersErrorMsg,
   emailErrorMsg,

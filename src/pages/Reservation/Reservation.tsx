@@ -4,29 +4,29 @@
 
 import React from "react";
 import { ColumnGrid } from "../../styles/StyledComponents";
-import tableReservationImage from "../../assets/table-reservation.jpg";
+import tableReservationImage from "../../assets/images/table_reservation.jpg";
 import styled from "styled-components";
 import { media } from "../../styles/Theme";
-import ReservationSection from "./ReservationSection";
-import ContactSection from "./ContactDetails";
-import CTAButton from "../../Components/CTAButton";
+import ReservationSection from "./components/ReservationSection";
+import ContactSection from "./components/ContactDetails";
+import CTAButton from "../../components/CTAButton";
 import { useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { initializeTimes, updateTimes } from "../../utils/bookingUtils";
+import { initializeTimes, updateTimes } from "../../utils/reservationUtils";
 import { useFormValidation } from "../../hooks/useFormValidation";
 import { submitAPI } from "../../utils/api";
-import { occasionOptions } from "../../dummyData";
+import { occasionOptions } from "../../utils/dummyData";
 
-const Thumbnail = styled.img`
+export const Thumbnail = styled.img`
   width: 100%;
-  height: 250px;
+  height: 150px;
 `;
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xl};
-  padding: ${({ theme }) => theme.spacing.lg} 0 5rem;
+  padding: 0 0 5rem;
   ${media.sm`
     grid-column: 1/-1;
   `}
@@ -127,7 +127,7 @@ export type Touched = {
 };
 export type TimesAction = { type: "UPDATE_TIMES"; date: DateType };
 
-const BookingPage = () => {
+const Reservation = () => {
   const timesReducer = (state: string[], action: TimesAction) => {
     switch (action.type) {
       case "UPDATE_TIMES":
@@ -166,7 +166,7 @@ const BookingPage = () => {
     <>
       <Thumbnail src={tableReservationImage} alt="Decorative restaurant table" />
       <ColumnGrid>
-        <Title>Reserve a Table</Title>
+        <Title>Reserve your table</Title>
         <StyledForm>
           <ReservationSection
             reservation={reservation}
@@ -197,4 +197,4 @@ const BookingPage = () => {
   );
 };
 
-export default BookingPage;
+export default Reservation;

@@ -1,6 +1,6 @@
-import logoImg from "../assets/Logo.svg";
-import hamburgerIcon from "../assets/hamburger_menu.svg";
-import basketIcon from "../assets/basket.svg";
+import logoImg from "../assets/logos/logo.svg";
+import hamburgerIcon from "../assets/icons/hamburger_menu.svg";
+import basketIcon from "../assets/icons/basket.svg";
 import styled from "styled-components";
 import { media } from "../styles/Theme";
 import { ColumnGrid } from "../styles/StyledComponents";
@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { navigationLinks } from "../utils/constants";
 
-const StyledNav = styled.nav`
+const StyledNav = styled.header`
   grid-column: 1/-1;
   display: flex;
   width: 100%;
@@ -26,10 +26,10 @@ const StyledNav = styled.nav`
     padding: 1rem 0;
   `};
   ${media.lg`
-    grid-column: 2/-2;
+    grid-column: 1/-1;
   `}
   ${media.xl`
-    grid-column: 3/-3;
+    grid-column: 2/-2;
   `}
 `;
 
@@ -46,6 +46,14 @@ const MobileIcon = styled.img<{ $isLeftIcon?: boolean }>`
     outline: 4px solid ${({ theme }) => theme.color.primary.light};
     outline-offset: ${({ theme }) => theme.spacing.sm};
   }
+  ${media.md`
+        display: none;
+    `};
+`;
+
+const PlaceholderIcon = styled.div`
+  width: 32px;
+  height: 100%;
   ${media.md`
         display: none;
     `};
@@ -110,8 +118,7 @@ const NavLinks = styled.ul`
   display: none;
   ${media.md`
         display: flex;
-        justify-content: space-between;
-        justify-self: flex-end;
+        justify-content: flex-end;
         align-items: center;
     `}
 `;
@@ -157,9 +164,10 @@ const Logo = () => (
     <img src={logoImg} alt="Little Lemon restautant logo." />
   </LogoLink>
 );
-const Nav = () => {
+const Header = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState<boolean>(false);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+  const hasOrder = false;
   const handleCloseMenu = () => {
     setIsTransitioning(true);
     const t = setTimeout(() => {
@@ -194,34 +202,42 @@ const Nav = () => {
                 onClick={handleCloseMenu}
               />
             </MobileMenuHeader>
-            <MobileNavLinks>
-              {navigationLinks.map(linkObj => (
-                <NavLink key={linkObj.label}>
-                  <CustomLink href={linkObj.link} onClick={handleCloseMenu}>
-                    {linkObj.label}
-                  </CustomLink>
-                </NavLink>
-              ))}
-            </MobileNavLinks>
+            <nav>
+              <MobileNavLinks>
+                {navigationLinks.map(linkObj => (
+                  <NavLink key={linkObj.label}>
+                    <CustomLink href={linkObj.link} onClick={handleCloseMenu}>
+                      {linkObj.label}
+                    </CustomLink>
+                  </NavLink>
+                ))}
+              </MobileNavLinks>
+            </nav>
           </MobileMenu>
         )}
         <Logo />
-        <MobileIcon
-          src={basketIcon}
-          alt="Basket icon."
-          tabIndex={0}
-          role="button"
-          aria-label="Open basket"
-        />
-        <NavLinks>
-          {navigationLinks.map(linkObj => (
-            <NavLink key={linkObj.label}>
-              <CustomLink href={linkObj.link}>{linkObj.label}</CustomLink>
-            </NavLink>
-          ))}
-        </NavLinks>
+        {hasOrder ? (
+          <MobileIcon
+            src={basketIcon}
+            alt="Basket icon."
+            tabIndex={0}
+            role="button"
+            aria-label="Open basket"
+          />
+        ) : (
+          <PlaceholderIcon />
+        )}
+        <nav>
+          <NavLinks>
+            {navigationLinks.map(linkObj => (
+              <NavLink key={linkObj.label}>
+                <CustomLink href={linkObj.link}>{linkObj.label}</CustomLink>
+              </NavLink>
+            ))}
+          </NavLinks>
+        </nav>
       </StyledNav>
     </ColumnGrid>
   );
 };
-export default Nav;
+export default Header;

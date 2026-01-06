@@ -1,8 +1,8 @@
-import restaurantImage from "../../assets/restaurant.jpg";
-import chefsImage from "../../assets/Mario_Adrian_B_cropped.jpg";
-import { ColumnGrid } from "../../styles/StyledComponents";
+import restaurantImage from "../../../assets/images/restaurant.jpg";
+import chefsImage from "../../../assets/images/Mario_Adrian_B_cropped.jpg";
+import { ColumnGrid } from "../../../styles/StyledComponents";
 import styled from "styled-components";
-import { media } from "../../styles/Theme";
+import { media } from "../../../styles/Theme";
 
 const TextContent = styled.div`
   ${media.sm`
@@ -18,6 +18,8 @@ const TextContent = styled.div`
     grid-column: 3/ span 3;
     `}
 `;
+
+// TODO: keep one h1 in a page and sections should have h2
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.color.primary.dark};
