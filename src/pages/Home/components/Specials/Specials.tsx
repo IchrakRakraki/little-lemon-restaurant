@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Card from "../../Components/Card";
-import { weekSpecials } from "../../dummyData";
-import { ColumnGrid } from "../../styles/StyledComponents";
-import CTAButton from "../../Components/CTAButton";
-import { media } from "../../styles/Theme";
+import Card from "./Card";
+import { weekSpecials } from "../../../../utils/dummyData";
+import { ColumnGrid } from "../../../../styles/StyledComponents";
+import CTAButton from "../../../../components/CTAButton";
+import { media } from "../../../../styles/Theme";
 import { useNavigate } from "react-router-dom";
 
 const Content = styled.div`

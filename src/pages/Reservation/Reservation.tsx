@@ -4,18 +4,18 @@
 
 import React from "react";
 import { ColumnGrid } from "../../styles/StyledComponents";
-import tableReservationImage from "../../assets/table-reservation.jpg";
+import tableReservationImage from "../../assets/images/table_reservation.jpg";
 import styled from "styled-components";
 import { media } from "../../styles/Theme";
-import ReservationSection from "./ReservationSection";
-import ContactSection from "./ContactDetails";
-import CTAButton from "../../Components/CTAButton";
+import ReservationSection from "./components/ReservationSection";
+import ContactSection from "./components/ContactDetails";
+import CTAButton from "../../components/CTAButton";
 import { useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { initializeTimes, updateTimes } from "../../utils/bookingUtils";
+import { initializeTimes, updateTimes } from "../../utils/reservationUtils";
 import { useFormValidation } from "../../hooks/useFormValidation";
 import { submitAPI } from "../../utils/api";
-import { occasionOptions } from "../../dummyData";
+import { occasionOptions } from "../../utils/dummyData";
 
 const Thumbnail = styled.img`
   width: 100%;
@@ -127,7 +127,7 @@ export type Touched = {
 };
 export type TimesAction = { type: "UPDATE_TIMES"; date: DateType };
 
-const BookingPage = () => {
+const Reservation = () => {
   const timesReducer = (state: string[], action: TimesAction) => {
     switch (action.type) {
       case "UPDATE_TIMES":
@@ -197,4 +197,4 @@ const BookingPage = () => {
   );
 };
 
-export default BookingPage;
+export default Reservation;

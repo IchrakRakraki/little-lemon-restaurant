@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LargeLogo from "../assets/LargeLogo.png";
+import LargeLogo from "../assets/logos/logo_lg.png";
 import { media } from "../styles/Theme";
 import { ColumnGrid } from "../styles/StyledComponents";
 import { footerNavigationLinks } from "../utils/constants";
@@ -90,7 +90,7 @@ const Footer = () => {
               ))}
             </LinksContainer>
           </FooterCategory>
-          <Watermark>© Ichrak Rakraki — Little Lemon Coursera Submission</Watermark>
+          {/* <Watermark>© Ichrak Rakraki — Little Lemon Coursera Submission</Watermark> */}
         </CustomFooter>
       </ColumnGrid>
     </Background>

@@ -1,4 +1,4 @@
-import type { DateType } from "../Containers/BookingPage/BookingPage";
+import type { DateType } from "../pages/Reservation/Reservation";
 import { fetchAPI } from "./api";
 
 export const initializeTimes = (): string[] => {

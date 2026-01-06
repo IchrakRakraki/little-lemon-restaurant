@@ -9,16 +9,16 @@ import {
   type Reservation,
   type TimesAction,
   type Touched,
-} from "./BookingPage";
+} from "../Reservation";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { media } from "../../styles/Theme";
+import { media } from "../../../styles/Theme";
 import { useEffect, useRef, type Dispatch, type FC, type SetStateAction } from "react";
-import { minMaxDiners } from "../../utils/constants";
-import { ErrorMessage } from "../../styles/StyledComponents";
-import { occasionOptions } from "../../dummyData";
+import { minMaxDiners } from "../../../utils/constants";
+import { ErrorMessage } from "../../../styles/StyledComponents";
+import { occasionOptions } from "../../../utils/dummyData";
 
 const ReservationDetails = styled.div`
   ${({ theme }) => media.md`

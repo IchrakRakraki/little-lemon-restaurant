@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ColumnGrid } from "../../styles/StyledComponents";
-import { media } from "../../styles/Theme";
+import { ColumnGrid } from "../../../styles/StyledComponents";
+import { media } from "../../../styles/Theme";
 const Container = styled.section`
   padding: ${({ theme }) => theme.spacing.lg} 0;
   margin: ${({ theme }) => theme.spacing.lg} 0;

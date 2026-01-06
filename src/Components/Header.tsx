@@ -1,6 +1,6 @@
-import logoImg from "../assets/Logo.svg";
-import hamburgerIcon from "../assets/hamburger_menu.svg";
-import basketIcon from "../assets/basket.svg";
+import logoImg from "../assets/logos/logo.svg";
+import hamburgerIcon from "../assets/icons/hamburger_menu.svg";
+import basketIcon from "../assets/icons/basket.svg";
 import styled from "styled-components";
 import { media } from "../styles/Theme";
 import { ColumnGrid } from "../styles/StyledComponents";

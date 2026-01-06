@@ -5,7 +5,7 @@ import greekSalad from "../assets/greekSalad.jpg";
 import bruschetta from "../assets/bruschetta.jpg";
 import lemonDessert from "../assets/lemonDessert.jpg";
 import { media } from "../../styles/Theme";
-import { weekSpecials } from "../../dummyData";
+import { weekSpecials } from "../../utils/dummyData";
 import { ColumnGrid } from "../../styles/StyledComponents";
 
 // Full Menu Data

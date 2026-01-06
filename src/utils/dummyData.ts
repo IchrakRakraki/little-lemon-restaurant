@@ -1,10 +1,10 @@
-import greekSalad from "./assets/greek-salad.jpg";
-import bruschetta from "./assets/bruschetta.jpg";
-import lemonDessert from "./assets/lemon-dessert.jpg";
-import avatarSara from "./assets/sara.jpg";
-import avatarJon from "./assets/jon-do.jpg";
-import avatarElise from "./assets/elise.jpg";
-import avatarAsh from "./assets/ash.jpg";
+import greekSalad from "../assets/images/greek_salad.jpg";
+import bruschetta from "../assets/images/bruschetta.jpg";
+import lemonDessert from "../assets/images/lemon_dessert.jpg";
+import avatarSara from "../assets/images/testimonials/sara.jpg";
+import avatarJon from "../assets/images/testimonials/jon-do.jpg";
+import avatarElise from "../assets/images/testimonials/elise.jpg";
+import avatarAsh from "../assets/images/testimonials/ash.jpg";
 
 export const weekSpecials = [
   {

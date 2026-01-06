@@ -1,10 +1,10 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import BookingPage from "../Containers/BookingPage/BookingPage";
+import Reservation from "../pages/Reservation/Reservation";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../styles/Theme";
 import { describe, it, expect, vi } from "vitest";
-import ContactSection from "../Containers/BookingPage/ContactDetails.js";
-import ReservationSection from "../Containers/BookingPage/ReservationSection.js";
+import ContactSection from "../pages/Reservation/components/ContactDetails";
+import ReservationSection from "../pages/Reservation/components/ReservationSection";
 import { BrowserRouter } from "react-router-dom";
 import {
   dinersErrorMsg,
@@ -39,7 +39,7 @@ import {
 // });
 const mockSetReservation = vi.fn();
 const mockSetTouched = vi.fn();
-vi.mock("../dummydata", () => ({
+vi.mock("../utils/dummydata", () => ({
   occasionOptions: ["Birthday", "Anniversary"], // your test options
 }));
 const mockReservationProps = {
@@ -54,7 +54,7 @@ const mockReservationProps = {
   setReservation: mockSetReservation,
   availableTimes: ["18:00", "19:00"],
   dispatchTimes: vi.fn(),
-  errors: { dinersCount: "" },
+  errors: { dinersCount: "", firstName: "", lastName: "", email: "" },
   touched: { dinersCount: false, time: false },
   setTouched: mockSetTouched,
 };
@@ -188,7 +188,7 @@ describe("Booking page validation test", () => {
     render(
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <BookingPage {...mockReservationProps} {...mockContactProps} />
+          <Reservation {...mockReservationProps} {...mockContactProps} />
         </BrowserRouter>
       </ThemeProvider>,
     );

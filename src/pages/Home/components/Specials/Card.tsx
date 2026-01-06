@@ -1,7 +1,7 @@
-import React, { type FC } from "react";
+import { type FC } from "react";
 import styled from "styled-components";
-import { media } from "../styles/Theme";
-import delivery from "../assets/delivery.svg";
+import { media } from "../../../../styles/Theme";
+import delivery from "../../../../assets/icons/delivery.svg";
 
 const MenuItem = styled.article`
   width: 100%;
